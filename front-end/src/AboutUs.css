@@ -1,0 +1,54 @@
+/* About.css */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .about-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .about-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+  }
+  
+  .ceo-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ceo-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .ceo-details {
+    flex: 1;
+  }
+  
+  .ceo-details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .ceo-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #777777;
+  }
+  
