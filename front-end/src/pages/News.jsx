@@ -1,9 +1,30 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+
 function News() {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    async function fetchNews() {
+      const response = await fetch('/api/news');
+      const data = await response.json();
+      setNews(data);
+    }
+    fetchNews();
+  }, []);
+
   return (
-    <div>News</div>
-  )
+    <div className="App">
+      <h1>News</h1>
+      <ul>
+        {news.map(article => (
+          <li key={article.id}>
+            <h2>{article.title}</h2>
+            <p>{article.content}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default News
