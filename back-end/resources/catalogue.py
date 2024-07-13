@@ -13,19 +13,10 @@ catalogue_parser.add_argument('rating', type=float, required=True, help='Rating 
 catalogue_parser.add_argument('release_date', type=lambda x: datetime.strptime(x, '%Y-%m-%d'), required=True, help='Release date is required (YYYY-MM-DD)')
 
 class CatalogueResource(Resource):
-    def get(self, catalogue_id):
-        from ..app import db  # Import inside method to avoid circular import
-        catalogue = Catalogue.query.get_or_404(catalogue_id, description=f'Catalogue with ID {catalogue_id} not found')
-        return {
-            'id': catalogue.id,
-            'image_url': catalogue.image_url,
-            'brand': catalogue.brand,
-            'model': catalogue.model,
-            'category': catalogue.category,
-            'price': catalogue.price,
-            'rating': catalogue.rating,
-            'release_date': catalogue.release_date.strftime('%Y-%m-%d')
-        }
+    def get(self):
+       catalogue=Catalogue.query.all()
+       print (catalogue)
+       return[] 
 
     def post(self):
         from ..app import db  # Import inside method to avoid circular import
