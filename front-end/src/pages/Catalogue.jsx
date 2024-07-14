@@ -3,6 +3,7 @@ import Background from "../components/Background.jsx";
 import Navbar from "../components/Navbar.jsx";
 import { BASE_URL } from "../components/data/data.jsx";
 import "../index.css";
+import CatalogueVideo from "../components/CatalogueVideo.jsx";
 
 function Catalogue() {
   const [catalogue, setCatalogue] = useState([]);
@@ -16,7 +17,7 @@ function Catalogue() {
   return (
     <div>
       <Navbar />
-      <Background />
+      <CatalogueVideo/>
     <div className="catalogue-container">
       <h1 className="catalogue-title">Catalogue</h1>
       <button className="catalogue-futuristic-button">Add to Catalogue</button>
