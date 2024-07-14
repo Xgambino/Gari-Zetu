@@ -57,12 +57,25 @@ news1 = News(
     image_url= 'https://i.ebayimg.com/images/g/b8wAAOSwE0JY~i3n/s-l1200.webp',
     description= 'New Model Release: Toyota Camry 2023',
     ticket_price= 'KES 4,500', 
-    date= '2024-12-15'
+    date= '2024-08-15'
+)
+news2 = News(
+    image_url= 'https://png.pngtree.com/png-clipart/20220429/original/pngtree-car-battery-charge-innovation-technology-vintage-poster-of-electric-vehicle-recharge-png-image_7569522.png',
+    description= 'Electric Cars: The Future of Automotive Industry',
+    ticket_price= 'KES 5,000', 
+    date= '2024-09-11'
+)
+news3 = News(
+    image_url= 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/car-rentals-poster-design-template-b6eec7913ae957e894b2b40d1643872b.jpg?ts=1637038220',
+    description= 'How Self-Driving Cars Are Changing the World',
+    ticket_price= 'KES 6,000', 
+    date= '2024-12-31'
 )
 
 # Wrap database operations in app context
 with app.app_context():
     Catalogue.query.delete()
+    News.query.delete()
     # Add instances to session and commit changes
     db.session.add(catalogue1)
     db.session.add(catalogue2)
@@ -71,6 +84,9 @@ with app.app_context():
     db.session.add(catalogue5)
 
     db.session.add(news1)
+    db.session.add(news2)
+    db.session.add(news3)
+    
     
     db.session.commit()
 

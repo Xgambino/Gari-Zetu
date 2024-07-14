@@ -1,39 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { BASE_URL } from "../components/data/data.jsx";
+import Navbar from "../components/Navbar.jsx";
+import CatalogueVideo from "../components/CatalogueVideo.jsx";
 import "../index.css";
 
 const News = () => {
-    const [newsArticles, setNewsArticles] = useState([]);
+  const [news, setNews] = useState([]);
 
-    useEffect(() => {
-        fetchNewsArticles();
-    }, []);
-
-    const fetchNewsArticles = async () => {
-        try {
-            const response = await axios.get('/api/news'); // Adjust endpoint if needed
-            setNewsArticles(response.data);
-        } catch (error) {
-            console.error('Error fetching news articles:', error);
-        }
-    };
+  useEffect(() => {
+    fetch(`${BASE_URL}/news`)
+      .then((response) => response.json())
+      .then((data) => setNews(data));
+  }, []);
 
     return (
+      <div>
+        <Navbar />
+      <CatalogueVideo/>
         <div className="news-container">
-            <h1>Latest News Articles</h1>
+            <h1>Latest News Article</h1>
             <div className="news-list">
-                {newsArticles.map(article => (
-                    <div key={article.id} className="news-item">
-                        <img src={article.image_url} alt="News" />
+                {news.map(newser => (
+                    <div key={newser.id} className="news-item">
+                        <img src={newser.image_url} alt="News" />
                         <div className="news-details">
-                            <h2>{article.title}</h2>
-                            <p>{article.description}</p>
-                            <p>Ticket Price: {article.ticket_price}</p>
-                            <p>Date: {article.date}</p>
+                            <h2>{newser.title}</h2>
+                            <p>{newser.description}</p>
+                            <p>Ticket Price: {newser.ticket_price}</p>
+                            <p>Date: {newser.date}</p>
                         </div>
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 };
