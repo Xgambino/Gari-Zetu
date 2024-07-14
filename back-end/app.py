@@ -4,10 +4,13 @@ from models import db  # Assuming models.py is in the same directory
 from flask_migrate import Migrate
 from resources.catalogue import CatalogueResource
 from resources.add_catalogue import CatalogueAddResource
+from flask_cors import CORS
 
 app = Flask(__name__)
 # app.config.from_object(Config)  # Uncomment and adjust as needed
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dealership.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app)  # Enable CORS for cross-origin resource sharing
 
 # Initialize SQLAlchemy and Flask-Migrate
 db.init_app(app)

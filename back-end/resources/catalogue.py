@@ -15,7 +15,7 @@ catalogue_parser.add_argument('release_date', type=lambda x: datetime.strptime(x
 class CatalogueResource(Resource):
     def get(self):
        catalogues = Catalogue.query.all()
-       print (catalogues)
+       print ([catalogue.to_dict()for catalogue in catalogues])
        return [catalogue.to_dict()for catalogue in catalogues],200
 
     def post(self):
