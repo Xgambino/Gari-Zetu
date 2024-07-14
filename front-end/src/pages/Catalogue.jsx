@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Background from "../components/Background.jsx";
+
 import Navbar from "../components/Navbar.jsx";
 import { BASE_URL } from "../components/data/data.jsx";
 import "../index.css";
