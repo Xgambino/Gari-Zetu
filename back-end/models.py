@@ -25,9 +25,8 @@ class Catalogue(db.Model, SerializerMixin):
     price = db.Column(db.Text, nullable=False)
     rating = db.Column(db.Text, nullable=False)
     release_date = db.Column(db.Text, nullable=False)
-    addcatalogues = db.relationship("AddCatalogue", back_populates="catalogue")
-    news = db.relationship("News", back_populates="catalogue")  # Define the news relationship
-
+    # addcatalogues = db.relationship("AddCatalogue", back_populates="catalogue")
+    # news = db.relationship("News", back_populates="catalogue")  # Define the news relationship
 
 class AddCatalogue(db.Model, SerializerMixin):
     __tablename__ = "addcatalogues"

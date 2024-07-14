@@ -1,5 +1,5 @@
-from app import app, db  # Adjust import paths as necessary
-from models import Catalogue, AddCatalogue, News  # Import your models
+from app import app
+from models import Catalogue, db, AddCatalogue, News  # Import your models
 
 # Create instances of your models
 catalogue1 = Catalogue(

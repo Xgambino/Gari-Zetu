@@ -18,7 +18,7 @@ api = Api(app)
 
 # Add RESTful resources to API
 api.add_resource(CatalogueResource, '/catalogues')
-api.add_resource(CatalogueAddResource, '/add_catalogues', '/add_catalogues/<int:add_catalogue_id>')
+# api.add_resource(CatalogueAddResource, '/add_catalogues', '/add_catalogues/<int:add_catalogue_id>')
 # Add other resources as needed
 
 if __name__ == '__main__':
