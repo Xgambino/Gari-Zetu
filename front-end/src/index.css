@@ -37,7 +37,8 @@
   color: white;
 }
 .nav a {
-  color: white;
+  color: #262626;
+  
   text-decoration: none;
 }
 .nav-logo{
@@ -187,4 +188,22 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   opacity: 0.8;
+}
+.catalogue-futuristic-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalogue-futuristic-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
