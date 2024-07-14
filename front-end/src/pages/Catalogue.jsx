@@ -14,6 +14,7 @@ function Catalogue() {
     return (
         <div className="catalogue-container">
             <h1 className="catalogue-title">Catalogue</h1>
+            <button>Add to Catalogue</button>
             <ul className="catalogue-list">
                 {catalogue.map((item) => (
                     <li key={item.id} className="catalogue-item">
