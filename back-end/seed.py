@@ -1,4 +1,4 @@
-
+from app import app
 from models import Catalogue, db, AddCatalogue, News  # Import your models
 
 # Create instances of your models
