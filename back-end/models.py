@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData, ForeignKey
+from sqlalchemy_serializer import SerializerMixin
 
 # Create convention for SQLAlchemy naming
 convention = {
@@ -14,7 +15,7 @@ metadata = MetaData(naming_convention=convention)
 
 db = SQLAlchemy(metadata=metadata)
 
-class Catalogue(db.Model):
+class Catalogue(db.Model, SerializerMixin):
     __tablename__ = "catalogues"
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.Text, nullable=False)
@@ -28,7 +29,7 @@ class Catalogue(db.Model):
     news = db.relationship("News", back_populates="catalogue")  # Define the news relationship
 
 
-class AddCatalogue(db.Model):
+class AddCatalogue(db.Model, SerializerMixin):
     __tablename__ = "addcatalogues"
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.Text, nullable=False)
@@ -41,7 +42,7 @@ class AddCatalogue(db.Model):
     catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
     catalogue = db.relationship("Catalogue", back_populates="addcatalogues")
 
-class News(db.Model):
+class News(db.Model, SerializerMixin):
     __tablename__ = "news"
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.Text, nullable=False)
