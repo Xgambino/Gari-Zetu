@@ -52,41 +52,41 @@ catalogue5 = Catalogue(
     release_date='2023-05-01'
 )
 
-# Create instances for news blog
-news1 = News(
-    title='New Model Release: Toyota Camry 2023',
-    content='Toyota has just released its latest model of the Camry for 2023, featuring new technological advancements and an updated design.',
-    author='John Doe',
-    publication_date='2023-01-15'
-)
+# # Create instances for news blog
+# news1 = News(
+#     title='New Model Release: Toyota Camry 2023',
+#     content='Toyota has just released its latest model of the Camry for 2023, featuring new technological advancements and an updated design.',
+#     author='John Doe',
+#     publication_date='2023-01-15'
+# )
 
-news2 = News(
-    title='Honda Civic 2023: A Comprehensive Review',
-    content='The 2023 Honda Civic has been reviewed by experts and it continues to impress with its performance and reliability.',
-    author='Jane Smith',
-    publication_date='2023-02-20'
-)
+# news2 = News(
+#     title='Honda Civic 2023: A Comprehensive Review',
+#     content='The 2023 Honda Civic has been reviewed by experts and it continues to impress with its performance and reliability.',
+#     author='Jane Smith',
+#     publication_date='2023-02-20'
+# )
 
-news3 = News(
-    title='Ford Mustang 2023: Power and Style',
-    content='Ford Mustang’s latest 2023 model combines power and style, making it a top choice for sports car enthusiasts.',
-    author='Mike Johnson',
-    publication_date='2023-03-25'
-)
+# news3 = News(
+#     title='Ford Mustang 2023: Power and Style',
+#     content='Ford Mustang’s latest 2023 model combines power and style, making it a top choice for sports car enthusiasts.',
+#     author='Mike Johnson',
+#     publication_date='2023-03-25'
+# )
 
-news4 = News(
-    title='Chevrolet Tahoe 2023: The Ultimate Family SUV',
-    content='Chevrolet has released the 2023 Tahoe, an SUV that offers ample space, comfort, and advanced safety features for families.',
-    author='Emily White',
-    publication_date='2023-04-10'
-)
+# news4 = News(
+#     title='Chevrolet Tahoe 2023: The Ultimate Family SUV',
+#     content='Chevrolet has released the 2023 Tahoe, an SUV that offers ample space, comfort, and advanced safety features for families.',
+#     author='Emily White',
+#     publication_date='2023-04-10'
+# )
 
-news5 = News(
-    title='Tesla Model 3 2023: The Future of Electric Cars',
-    content='Tesla’s 2023 Model 3 continues to lead the way in the electric car market with its innovative features and impressive range.',
-    author='Alex Green',
-    publication_date='2023-05-05'
-)
+# news5 = News(
+#     title='Tesla Model 3 2023: The Future of Electric Cars',
+#     content='Tesla’s 2023 Model 3 continues to lead the way in the electric car market with its innovative features and impressive range.',
+#     author='Alex Green',
+#     publication_date='2023-05-05'
+# )
 
 # Wrap database operations in app context
 with app.app_context():

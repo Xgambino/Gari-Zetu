@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from datetime import datetime
-from models import db,Catalogue
+from models import Catalogue
 
 
 catalogue_parser = reqparse.RequestParser()
@@ -14,9 +14,9 @@ catalogue_parser.add_argument('release_date', type=lambda x: datetime.strptime(x
 
 class CatalogueResource(Resource):
     def get(self):
-       catalogue=Catalogue.query.all()
-       print (catalogue)
-       return[] 
+       catalogues = Catalogue.query.all()
+       print (catalogues)
+       return [catalogue.to_dict()for catalogue in catalogues],200
 
     def post(self):
         from ..app import db  # Import inside method to avoid circular import
