@@ -40,14 +40,6 @@ add_catalogue1 = AddCatalogue(
 
 db.session.add(add_catalogue1)
 
-# Add seed data for News
-news1 = News(
-    image_url="https://example.com/image4.jpg",
-    description="New car models arriving this summer!",
-    ticket_price="100",
-    date="2022-04-01"
-)
-
 db.session.add(news1)
 
 db.session.commit()
