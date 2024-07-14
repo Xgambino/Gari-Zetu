@@ -2,15 +2,15 @@ from app import app
 from models import Catalogue, db, AddCatalogue, News  # Import your models
 
 # Create instances of your models
-catalogue1 = Catalogue(
-    image_url='https://imgd.aeplcdn.com/664x374/n/cw/ec/110233/camry-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80',
-    brand='Toyota',
-    model='Camry',
-    category='Sedan',
-    price='KES2,400,00',
-    rating='4.5',
-    release_date='2023-01-01'
-)
+# catalogue1 = Catalogue(
+#     image_url='https://imgd.aeplcdn.com/664x374/n/cw/ec/110233/camry-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80',
+#     brand='Toyota',
+#     model='Camry',
+#     category='Sedan',
+#     price='KES2,400,00',
+#     rating='4.5',
+#     release_date='2023-01-01'
+# )
 
 catalogue2 = Catalogue(
     image_url='https://d2q68z18seh9hj.cloudfront.net/wp-content/uploads/2020/08/27182529/Civic-Sedan-LX-in-Platinum-Pearl-White.png',
