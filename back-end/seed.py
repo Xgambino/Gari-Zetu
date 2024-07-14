@@ -90,8 +90,14 @@ catalogue5 = Catalogue(
 
 # Wrap database operations in app context
 with app.app_context():
+    Catalogue.query.delete()
     # Add instances to session and commit changes
     db.session.add(catalogue1)
+    db.session.add(catalogue2)
+    db.session.add(catalogue3)
+    db.session.add(catalogue4)
+    db.session.add(catalogue5)
+    
     db.session.commit()
 
     print("Data seeded successfully!")
