@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import MetaData, ForeignKey
+from sqlalchemy import MetaData
 from sqlalchemy_serializer import SerializerMixin
 
 # Create convention for SQLAlchemy naming
@@ -38,8 +38,12 @@ class AddCatalogue(db.Model, SerializerMixin):
     price = db.Column(db.Text, nullable=False)
     rating = db.Column(db.Text, nullable=False)
     release_date = db.Column(db.Text, nullable=False)
-    catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
-    catalogue = db.relationship("Catalogue", back_populates="addcatalogues")
+    # catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
+    # catalogue = db.relationship("Catalogue", back_populates="addcatalogues")
+    company_data_id = db.Column(db.Integer, db.ForeignKey('company_data.id'), nullable=False)
+    company_data = db.relationship('Company_data', back_populates='catalogues')
+
+
 
 class News(db.Model, SerializerMixin):
     __tablename__ = "news"
@@ -51,3 +55,13 @@ class News(db.Model, SerializerMixin):
     date = db.Column(db.Text, nullable=False)
     catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
     catalogue = db.relationship("Catalogue", back_populates="news")
+
+class Company_data(db.Model, SerializerMixin):
+    __tablename__ = "company_datas"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text, nullable=False)
+    title = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    image_url = db.Column(db.Text, nullable=False)
+    catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
+    catalogues = db.relationship('AddCatalogue', back_populates='company_data', lazy=True)
