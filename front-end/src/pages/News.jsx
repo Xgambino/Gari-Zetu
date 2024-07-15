@@ -26,6 +26,7 @@ const News = () => {
                         <div className="news-details">
                             <h2>{newser.title}</h2>
                             <p>{newser.description}</p>
+                            <p>Location: {newser.location}</p>
                             <p>Ticket Price: {newser.ticket_price}</p>
                             <p>Date: {newser.date}</p>
                         </div>
