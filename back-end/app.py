@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restful import Api,Resource
 from models import db  # Assuming models.py is in the same directory
 from flask_migrate import Migrate
-# from resources.catalogue import CatalogueResource
+from resources.catalogue import CatalogueResource
 from resources.news import NewsResource
 from resources.add_catalogue import CatalogueAddResource
 from flask_cors import CORS

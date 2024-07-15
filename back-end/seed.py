@@ -56,18 +56,21 @@ catalogue5 = Catalogue(
 news1 = News(
     image_url= 'https://i.ebayimg.com/images/g/b8wAAOSwE0JY~i3n/s-l1200.webp',
     description= 'New Model Release: Toyota Camry 2023',
+    location= 'Mombasa,Kenya',
     ticket_price= 'KES 4,500', 
     date= '2024-08-15'
 )
 news2 = News(
     image_url= 'https://png.pngtree.com/png-clipart/20220429/original/pngtree-car-battery-charge-innovation-technology-vintage-poster-of-electric-vehicle-recharge-png-image_7569522.png',
     description= 'Electric Cars: The Future of Automotive Industry',
+    location= 'Langata,Nairobi',
     ticket_price= 'KES 5,000', 
     date= '2024-09-11'
 )
 news3 = News(
     image_url= 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/car-rentals-poster-design-template-b6eec7913ae957e894b2b40d1643872b.jpg?ts=1637038220',
     description= 'How Self-Driving Cars Are Changing the World',
+    location= 'Karen,Nairobi',
     ticket_price= 'KES 6,000', 
     date= '2024-12-31'
 )

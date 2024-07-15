@@ -7,6 +7,7 @@ from models import News, db
 news_parser = reqparse.RequestParser()
 news_parser.add_argument('image_url', type=str, required=True, help='Image URL is required')
 news_parser.add_argument('description', type=str, required=True, help='Content is required')
+news_parser.add_argument('location', type=str, required=True, help='Location is required')
 news_parser.add_argument('ticket_price', type=str, required=True, help='Title is required')
 news_parser.add_argument('date', type=lambda x: datetime.strptime(x, '%Y-%m-%d'), required=True, help='Publication date is required (YYYY-MM-DD)')
 
@@ -20,6 +21,7 @@ class NewsResource(Resource):
         news_article = News(
             image_url=data['image_url'],
             description=data['description'],
+            location=data['location'],
             ticket_price=data['ticket_price'],
             date=data['date']
         )

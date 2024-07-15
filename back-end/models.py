@@ -46,6 +46,7 @@ class News(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text, nullable=False)
+    location = db.Column(db.Text, nullable=False)
     ticket_price = db.Column(db.Text, nullable=False)
     date = db.Column(db.Text, nullable=False)
     catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
