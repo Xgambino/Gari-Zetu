@@ -92,15 +92,22 @@ news6 = News(
     image_url= 'https://cdn2.allevents.in/thumbs/thumb660a65cd79f5c.jpg',
     description= 'Scavenger Hunt at Karura',
     location= 'Karura Forest,Kenya',
-    ticket_price= 'Enquiries: Bill 0439420520 (txt)', 
+    ticket_price= 'All Events Website', 
     date= '2024-08-21'
 )
 news7 = News(
     image_url= 'https://cdn-az.allevents.in/events9/banners/07fba9c7db645188ee520caf79c57d2a71708e42a1dfa9da81eb17a2859f2a3a-rimg-w1080-h1349-dcdc8c17-gmir?v=1720754435',
     description= 'TUNER FEST 4.0',
     location= 'Uhuru Gardens, Nairobi',
-    ticket_price= 'Early Bird:KES 1,000', 
+    ticket_price= 'Early Bird: KES 1,000', 
     date= '2024-08-18'
+)
+news8 = News(
+    image_url= 'https://motorsportskenya.org/wp-content/uploads/2024/02/2024-Sunset-Corsa-Tickets-Poster-2.jpg',
+    description= 'Sunset Corsa Nyahururu Stage One',
+    location= 'Nyahururu Airstrip',
+    ticket_price= 'Early Bird: KES 1,500', 
+    date= '2024-05-04'
 )
 # Wrap database operations in app context
 with app.app_context():
@@ -120,6 +127,7 @@ with app.app_context():
     db.session.add(news5)
     db.session.add(news6)
     db.session.add(news7)
+    db.session.add(news8)
 
     db.session.commit()
 
