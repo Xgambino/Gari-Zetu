@@ -237,7 +237,7 @@
 }
 
 .news-container {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 50px auto;
   padding: 20px;
   border-radius: 10px;
@@ -256,7 +256,7 @@ h1 {
 
 .news-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -264,6 +264,7 @@ h1 {
 .news-item {
   border-radius: 10px;
   overflow: hidden;
+  
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -275,7 +276,8 @@ h1 {
 
 .news-item img {
   width: 100%;
-  height: auto;
+  height: 450px;
+  object-fit: cover;
   border-bottom: 1px solid #333;
 }
 

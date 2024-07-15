@@ -74,7 +74,34 @@ news3 = News(
     ticket_price= 'KES 6,000', 
     date= '2024-12-31'
 )
-
+news4 = News(
+    image_url= 'https://images.squarespace-cdn.com/content/v1/579ae8c9725e25911c587e32/5e2cd501-f45d-437f-9acd-f4be8a845f61/nathalia-cars-n-coffee-street-show.jpg?format=2500w',
+    description= 'Cars and Coffee Nathalia',
+    location= 'Nathalia, Victoria',
+    ticket_price= 'Free Entry', 
+    date= '2024-07-14'
+)
+news5 = News(
+    image_url= 'https://images.squarespace-cdn.com/content/v1/579ae8c9725e25911c587e32/fb067e65-7747-46c2-b9d7-e861b1ed9530/violet-town-cares-and-coffee.jpg?format=2500w',
+    description= 'Violet Town Cars & Coffee',
+    location= 'Cowslip StreetViolet Town, VictoriaAustralia',
+    ticket_price= 'Enquiries: Bill 0439420520 (txt)', 
+    date= '2024-07-20'
+)
+news6 = News(
+    image_url= 'https://cdn2.allevents.in/thumbs/thumb660a65cd79f5c.jpg',
+    description= 'Scavenger Hunt at Karura',
+    location= 'Karura Forest,Kenya',
+    ticket_price= 'Enquiries: Bill 0439420520 (txt)', 
+    date= '2024-08-21'
+)
+news7 = News(
+    image_url= 'https://cdn-az.allevents.in/events9/banners/07fba9c7db645188ee520caf79c57d2a71708e42a1dfa9da81eb17a2859f2a3a-rimg-w1080-h1349-dcdc8c17-gmir?v=1720754435',
+    description= 'TUNER FEST 4.0',
+    location= 'Uhuru Gardens, Nairobi',
+    ticket_price= 'Early Bird:KES 1,000', 
+    date= '2024-08-18'
+)
 # Wrap database operations in app context
 with app.app_context():
     Catalogue.query.delete()
@@ -89,8 +116,11 @@ with app.app_context():
     db.session.add(news1)
     db.session.add(news2)
     db.session.add(news3)
-    
-    
+    db.session.add(news4)
+    db.session.add(news5)
+    db.session.add(news6)
+    db.session.add(news7)
+
     db.session.commit()
 
     print("Data seeded successfully!")
