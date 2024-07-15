@@ -1,70 +1,70 @@
-/* AboutUs.css */
 .about-container {
-    display: flex;
-    flex-direction: column; /* Arrange cards vertically */
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .about-card {
-    background-color: #3498db; /* Blue background color */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%; /* Full width of the container */
-    max-width: 600px; /* Limit maximum width */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  .about-card:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-  }
-  
-  .about-card h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #ffffff; /* White text color */
-  }
-  
-  .about-card p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #ffffff; /* White text color */
-  }
-  
-  .ceo-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ceo-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px;
-    border: 3px solid #ffffff; /* White border around the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s ease; /* Smooth transition for image scaling */
-  }
-  
-  .ceo-image:hover {
-    transform: scale(1.1); /* Scale up the image on hover */
-  }
-  
-  .ceo-details {
-    flex: 1;
-  }
-  
-  .ceo-details h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #ffffff; /* White text color */
-  }
-  
-  .ceo-details p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #f0f0f0; /* Light gray text color */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-card {
+  background-color: #000000; /* Black background color */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%; /* Full width of the container */
+  max-width: 100%; /* Adjust maximum width if needed */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.about-card:hover {
+  background-color: #ff69b4; /* Pink background on hover */
+  transform: translateY(-5px); /* Move up slightly on hover */
+}
+
+.about-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff; /* White text color */
+}
+
+.about-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff; /* White text color */
+}
+
+.ceo-info {
+  display: flex;
+  align-items: center;
+}
+
+.ceo-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #ffffff; /* White border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.ceo-image:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adjusted shadow on hover */
+}
+
+.ceo-details {
+  flex: 1;
+}
+
+.ceo-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #ffffff; /* White text color */
+}
+
+.ceo-details p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0f0f0; /* Light gray text color */
+}
