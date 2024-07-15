@@ -1,5 +1,5 @@
 body {
-  background-color: #554c4c; /* Light gray background color */
+  background-color: #2c2727; /* Light gray background color */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
 }
@@ -13,7 +13,7 @@ body {
 }
 
 .about-card {
-  background-color: #000000; /* Black background color */
+  background-color: #4e4949; /* Black background color */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
