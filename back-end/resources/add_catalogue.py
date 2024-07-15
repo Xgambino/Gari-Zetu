@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from models import AddCatalogue
-from models import db
+from .models import db
 from datetime import datetime
 
 add_catalogue_parser = reqparse.RequestParser()
