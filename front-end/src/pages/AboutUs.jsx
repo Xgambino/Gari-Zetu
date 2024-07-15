@@ -50,7 +50,7 @@ const About = () => {
       </div>
       <div className="about-card">
         <div className="ceo-info">
-          <img src="https://wwd.com/wp-content/uploads/2024/07/wwd-fred-bts-jin-ambassador-exclusive.jpg?crop=0px%2C316px%2C2000px%2C1120px&resize=1000%2C563" alt="Member 4" className="ceo-image" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9cNHz73z5anOM_U2R91mSvYFFpN0ByW8ERQ&s" alt="Member 4" className="ceo-image" />
           <div className="ceo-details">
             <h3>David Lee</h3>
             <p>Marketing Manager</p>

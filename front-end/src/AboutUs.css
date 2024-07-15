@@ -1,3 +1,9 @@
+body {
+  background-color: #554c4c; /* Light gray background color */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
 .about-container {
   display: grid;
   grid-template-columns: 1fr; /* Single column layout */
@@ -13,6 +19,7 @@
   padding: 20px;
   width: 100%; /* Full width of the container */
   max-width: 600px; /* Limit maximum width */
+  width: fit-content;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
