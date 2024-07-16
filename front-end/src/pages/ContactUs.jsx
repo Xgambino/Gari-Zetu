@@ -1,9 +1,15 @@
 // ContactUs.js
 
 import React from 'react';
-import '../ContactUs.css'; // Import CSS for ContactUs styling
+import '../index.css';
 
 const ContactUs = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    alert('Form submitted!');
+  };
+
   return (
     <div className="contact-us">
       <div className="contact-header">
@@ -15,7 +21,7 @@ const ContactUs = () => {
           <h3>Contact Details</h3>
           <p>Email: info@yourcarcompany.com</p>
           <p>Phone: 123-456-7890</p>
-          <p>Address: 123 Car Street, Cityville, State, Country</p>
+          <p>Address: Kiambu, State, Country</p>
         </div>
         <div className="contact-map">
           <h3>Our Location</h3>
@@ -28,6 +34,21 @@ const ContactUs = () => {
             tabIndex="0"
           ></iframe>
         </div>
+      </div>
+      <div className="contact-form">
+        <h3>Send Us a Message</h3>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label htmlFor="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
   );
