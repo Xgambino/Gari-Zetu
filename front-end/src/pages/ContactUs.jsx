@@ -38,7 +38,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
+    <div className="contact-us">
       <Navbar />
       <CatalogueVideo/>
     <div className="contact-us">
