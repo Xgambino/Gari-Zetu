@@ -1,13 +1,39 @@
-// ContactUs.js
 
-import React from 'react';
+
+import React, { useState } from 'react';
 import '../index.css';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    alert('Form submitted!');
+   
+    console.log('Form submitted with:', formData);
+
+    
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
+
+    
+    setSubmitted(true);
+
+    
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
   };
 
   return (
@@ -19,9 +45,9 @@ const ContactUs = () => {
       <div className="contact-info">
         <div className="contact-details">
           <h3>Contact Details</h3>
-          <p>Email: info@yourcarcompany.com</p>
-          <p>Phone: 123-456-7890</p>
-          <p>Address: Kiambu, State, Country</p>
+          <p>Email: gariZetu@gmail.com</p>
+          <p>Phone: 78456-7890</p>
+          <p>Address: Kenya, Nairobi,Kiambu Road</p>
         </div>
         <div className="contact-map">
           <h3>Our Location</h3>
@@ -37,18 +63,43 @@ const ContactUs = () => {
       </div>
       <div className="contact-form">
         <h3>Send Us a Message</h3>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+        {submitted ? (
+          <p className="success-message">Form submitted successfully!</p>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
 
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
 
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+            <label htmlFor="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
 
-          <button type="submit">Send Message</button>
-        </form>
+            <button type="submit">Send Message</button>
+          </form>
+        )}
       </div>
     </div>
   );
