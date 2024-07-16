@@ -1,6 +1,6 @@
 from app import app
-from models import Catalogue, db, Company_data, News  # Import your models
-from resources import company_data
+from models import Catalogue, db, News 
+
 # Create instances of your models
 catalogue1 = Catalogue(
     image_url='https://imgd.aeplcdn.com/664x374/n/cw/ec/110233/camry-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80',
@@ -110,25 +110,10 @@ news8 = News(
     date= '2024-05-04'
 )
 
-company_data1 = Company_data(
-    name="Jany Yang",
-    title="CEO",
-    description="Jany Yang is a visionary leader with a deep passion for cars and innovation. With over two decades of experience in the automotive industry, he has led CarQuest to become a beacon of excellence and inspiration.",
-    image="https://img.buzzfeed.com/buzzfeed-static/complex/images/bvbndkzvlqnwovinwomw/lori-harvey.jpg?output-format=jpg&output-quality=auto"
-)
-
-company_data2 = Company_data(
-    name="Jane Smith",
-    title="Chief Operating Officer",
-    description="Jane Smith oversees our operational strategies and ensures seamless execution. Her dedication and leadership drive our team towards excellence.",
-    image="https://crackmagazine.net/wp-content/uploads/2016/12/paralax-jorja-smith2-copy.jpg"
-)
-
 # Wrap database operations in app context
 with app.app_context():
     Catalogue.query.delete()
     News.query.delete()
-    Company_data.query.delete()
     # Add instances to session and commit changes
     db.session.add(catalogue1)
     db.session.add(catalogue2)
@@ -145,9 +130,6 @@ with app.app_context():
     db.session.add(news7)
     db.session.add(news8)
 
-    db.session.add(company_data1)
-    db.session.add(company_data2)
-    
     db.session.commit()
 
     print("Data seeded successfully!")
