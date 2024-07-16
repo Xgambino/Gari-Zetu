@@ -362,7 +362,7 @@ h1 {
 
 .contact-us {
   padding: 50px;
-  background-color: #f0f0f0;
+ 
   text-align: center;
 }
 
@@ -379,7 +379,7 @@ h1 {
 .contact-details {
   flex: 1;
   padding: 20px;
-  background-color: #ffffff;
+  
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   margin-right: 20px;
@@ -418,7 +418,7 @@ h1 {
 .contact-form {
   margin-top: 50px;
   padding: 20px;
-  background-color: #ffffff;
+  
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: left;
@@ -454,7 +454,7 @@ h1 {
 }
 
 .contact-form button {
-  background-color: #007bff;
+ 
   color: white;
   border: none;
   padding: 12px 20px;

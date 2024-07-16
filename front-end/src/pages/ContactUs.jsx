@@ -1,5 +1,6 @@
 
-
+import CatalogueVideo from "../components/CatalogueVideo.jsx";
+import Navbar from "../components/Navbar.jsx";
 import React, { useState } from 'react';
 import '../index.css';
 
@@ -37,6 +38,9 @@ const ContactUs = () => {
   };
 
   return (
+    <div>
+      <Navbar />
+      <CatalogueVideo/>
     <div className="contact-us">
       <div className="contact-header">
         <h1>Contact Us</h1>
@@ -101,6 +105,7 @@ const ContactUs = () => {
           </form>
         )}
       </div>
+    </div>
     </div>
   );
 };
