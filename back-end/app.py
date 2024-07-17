@@ -4,6 +4,7 @@ from models import db  # Assuming models.py is in the same directory
 from flask_migrate import Migrate
 from resources.catalogue import CatalogueResource
 from resources.news import NewsResource
+from resources.users import Register, Login
 from resources.add_catalogue import CatalogueAddResource
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
@@ -25,6 +26,8 @@ api = Api(app)
 # Add RESTful resources to API
 api.add_resource(CatalogueResource, '/catalogues')
 api.add_resource(NewsResource, '/news')
+api.add_resource(Login, '/login')
+api.add_resource(Register, '/register')
 # api.add_resource(CatalogueAddResource, '/add_catalogues', '/add_catalogues/<int:add_catalogue_id>')
 # Add other resources as needed
 

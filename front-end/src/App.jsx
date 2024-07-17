@@ -6,6 +6,8 @@ import "./index.css";
 import Catalogue from "./pages/Catalogue";
 import News from "./pages/News";
 import AboutUs from "./pages/AboutUs";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/catalogue" element={<Catalogue />} />
         <Route path="/news" element={<News />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

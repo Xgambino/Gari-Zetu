@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import Navbar from "../components/Navbar.jsx";
+import CatalogueVideo from "../components/CatalogueVideo.jsx";
 import { BASE_URL } from "../components/data/data.jsx";
 import "../index.css";
-import CatalogueVideo from "../components/CatalogueVideo.jsx";
+
 
 function Catalogue() {
   const [catalogue, setCatalogue] = useState([]);
