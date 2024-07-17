@@ -41,8 +41,15 @@ class AddCatalogue(db.Model, SerializerMixin):
     catalogue_id = db.Column(db.Integer, db.ForeignKey('catalogues.id'))
     catalogue = db.relationship("Catalogue", back_populates="addcatalogues")
 
-
-
+class User(db.Model,SerializerMixin):
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    password = db.Column(db.Text, nullable=False)
+    catalogues = db.relationship("Catalogue", back_populates="user")
+    addcatalogues = db.relationship("AddCatalogue", back_populates="user")  
+    users = db.relationship("User", back_populates="user")  
 
 class News(db.Model, SerializerMixin):
     __tablename__ = "news"

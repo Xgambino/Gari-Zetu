@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from resources.catalogue import CatalogueResource
 from resources.news import NewsResource
 from resources.add_catalogue import CatalogueAddResource
+from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -16,6 +17,7 @@ CORS(app)  # Enable CORS for cross-origin resource sharing
 # Initialize SQLAlchemy and Flask-Migrate
 db.init_app(app)
 migrate = Migrate(app, db)
+bcrypt = Bcrypt (app)
 
 # Initialize Flask-RESTful API
 api = Api(app)
