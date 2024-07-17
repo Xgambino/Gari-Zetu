@@ -26,7 +26,7 @@ function Catalogue() {
       <div className="catalogue-container">
         <h1 className="catalogue-title">Catalogue</h1>
         <button className="catalogue-futuristic-button">
-          Add to Catalogue
+          <a href="/add-to-catalogue">Add to Catalogue</a>
         </button>
         <ul className="catalogue-list">
           {catalogue.map((item) => (
@@ -49,7 +49,11 @@ function Catalogue() {
                   Release Date: {item.release_date}
                 </p>
                 <>
-                  <Button className="catalogue-futuristic-button" variant="primary" onClick={handleShow}>
+                  <Button
+                    className="catalogue-futuristic-button"
+                    variant="primary"
+                    onClick={handleShow}
+                  >
                     Buy
                   </Button>
                   <Modal
@@ -62,10 +66,19 @@ function Catalogue() {
                       You have successfully booked a viewing session
                     </Modal.Body>
                     <Modal.Footer className="catalogue-modal-info">
-                      <Button className="catalogue-modal-futuristic-button"  variant="secondary" onClick={handleClose}>
+                      <Button
+                        className="catalogue-modal-futuristic-button"
+                        variant="secondary"
+                        onClick={handleClose}
+                      >
                         Close
                       </Button>
-                      <Button className="catalogue-modal-futuristic-button" variant="primary">bought</Button>
+                      <Button
+                        className="catalogue-modal-futuristic-button"
+                        variant="primary"
+                      >
+                        bought
+                      </Button>
                     </Modal.Footer>
                   </Modal>
                 </>
