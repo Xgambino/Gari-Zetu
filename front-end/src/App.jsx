@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home"; 
 import "./index.css"; 
+import Home from "./pages/Home"; 
 import Catalogue from "./pages/Catalogue";
 import News from "./pages/News";
 import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ContactUs from "./pages/ContactUs";
+
 
 function App() {
   return (

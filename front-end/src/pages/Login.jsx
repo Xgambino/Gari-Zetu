@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {z} from "zod";
+import {zodResolver} from "@hook/resolver/zod";
+import toast from "react-hot-toast";
 import CatalogueVideo from "../components/CatalogueVideo.jsx";
 import '../index.css';
+
+const LoginSchema = z.object({
+  email: z.string().email().required(),
+  password: z.string().min(8).required(),
+});
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
