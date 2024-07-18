@@ -446,7 +446,7 @@ h1 {
   color: #ffffff; /* White text color */
 }
 
-/* Index.css */
+/* Login CSS */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 .container {
@@ -462,6 +462,7 @@ h1 {
   display: flex;
   justify-content: center; 
   align-items: center;
+  text-align: center;
 }
 
 .container p {
@@ -500,7 +501,24 @@ h1 {
   background-color: transparent;
   border-color: #fff;
 }
+.toggle-panel .btn-register {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 45px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
+.toggle-panel .btn-register:hover {
+  background-color: black;
+  color: white;
+}
 .container form {
   background-color: #fff;
   display: flex;
@@ -660,7 +678,16 @@ h1 {
 .container.active .toggle-right {
   transform: translateX(200%);
 }
+.forgot-password {
+  color: #007bff; /* Change to your desired color */
+  text-decoration: none;
+  font-size: 13px;
+  margin: 15px 0 10px;
+}
 
+.forgot-password:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
 /* ContactUs.css */
 
 .contact-us {

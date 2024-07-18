@@ -73,23 +73,10 @@
 //   );
 // }
 
-// function TogglePanel() {
-//   return (
-//     <div className="toggle-container">
-//       <div className="toggle">
-//         <div className="toggle-panel toggle-right">
-//           <h1>Hello, Friend!</h1>
-//           <p>If you have an account already click below to log in</p>
-//           <Link to="/login" className="btn btn-primary w-100">
-//             Log In
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+
 
 // export default Register;
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -97,7 +84,8 @@ import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { BASE_URL } from "../components/data/data.jsx";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CatalogueVideo from "../components/CatalogueVideo.jsx";
 
 const schema = z.object({
   username: z.string().min(1, { message: "Username is required" }),
@@ -149,75 +137,124 @@ export default function Login() {
   };
 
   return (
-    <div
-      style={{
-        padding: 40,
-        display: "flex",
-        height: "100%",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Form onSubmit={form.handleSubmit(onSubmit)}>
-        <Controller
-          control={form.control}
-          name="username"
-          render={({ field, fieldState }) => (
-            <Form.Group className="mb-3" controlId="formBasicUserName">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                {...field}
-                type="text"
-                placeholder="Enter Username"
-              />
-              {fieldState.invalid && (
-                <Form.Text className="text-danger">
-                  {fieldState.error.message}
-                </Form.Text>
+    <div>
+      <CatalogueVideo />
+      <div className="container">
+        <div className="form-container sign-in">
+          <Form onSubmit={form.handleSubmit(onSubmit)}>
+          <h1>Register</h1>
+            <Controller
+              control={form.control}
+              name="username"
+              render={({ field, fieldState }) => (
+                <Form.Group className="mb-3" controlId="formBasicUserName">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    {...field}
+                    type="text"
+                    placeholder="Enter Username"
+                  />
+                  {fieldState.invalid && (
+                    <Form.Text className="text-danger">
+                      {fieldState.error.message}
+                    </Form.Text>
+                  )}
+                </Form.Group>
               )}
-            </Form.Group>
-          )}
-        />
-        <Controller
-          control={form.control}
-          name="email"
-          render={({ field, fieldState }) => (
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control {...field} type="email" placeholder="Enter email" />
-              {fieldState.invalid && (
-                <Form.Text className="text-danger">
-                  {fieldState.error.message}
-                </Form.Text>
+            />
+            <Controller
+              control={form.control}
+              name="email"
+              render={({ field, fieldState }) => (
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    {...field}
+                    type="email"
+                    placeholder="Enter email"
+                  />
+                  {fieldState.invalid && (
+                    <Form.Text className="text-danger">
+                      {fieldState.error.message}
+                    </Form.Text>
+                  )}
+                </Form.Group>
               )}
-            </Form.Group>
-          )}
-        />
-        <Controller
-          control={form.control}
-          name="password"
-          render={({ field, fieldState }) => (
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control {...field} type="password" placeholder="Password" />
-              {fieldState.invalid && (
-                <Form.Text className="text-danger">
-                  {fieldState.error.message}
-                </Form.Text>
+            />
+            <Controller
+              control={form.control}
+              name="password"
+              render={({ field, fieldState }) => (
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    {...field}
+                    type="password"
+                    placeholder="Password"
+                  />
+                  {fieldState.invalid && (
+                    <Form.Text className="text-danger">
+                      {fieldState.error.message}
+                    </Form.Text>
+                  )}
+                </Form.Group>
               )}
-            </Form.Group>
-          )}
-        />
+            />
 
-        <Button
-          variant="primary"
-          type="submit"
-          disabled={form.formState.isSubmitting}
-        >
-          {form.formState.isSubmitting ? "Submitting..." : "Submit"}
-        </Button>
-      </Form>
+            <Button
+              variant="primary"
+              type="submit"
+              disabled={form.formState.isSubmitting}
+            >
+              {form.formState.isSubmitting ? "Submitting..." : "Submit"}
+            </Button>
+          </Form>
+        </div>
+        <TogglePanel />
+      </div>
+    </div>
+  );
+}
+const LoginButton = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    navigate("/login");
+  };
+
+  return (
+    <Button className="btn-register" onClick={handleRegisterClick}>
+      Log-in
+    </Button>
+  );
+};
+const HomeButton = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    navigate("/");
+  };
+
+  return (
+    <Button className="btn-register" onClick={handleRegisterClick}>
+      Home
+    </Button>
+  );
+};
+
+function TogglePanel() {
+  return (
+<div className="toggle-container">
+      <div className="toggle">
+        <div className="toggle-panel toggle-right">
+          <h1>Hello, Friend!</h1>
+          <p>If you have an account already <br/>click below to log in</p>
+          <LoginButton />
+          <p>If you prefer to continue browsing, <br/>
+          return by clicking here.</p>
+          <HomeButton/>
+        </div>
+      </div>
     </div>
   );
 }
