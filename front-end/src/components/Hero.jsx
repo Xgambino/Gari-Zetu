@@ -13,6 +13,7 @@ const Hero = ({ heroData, setHeroCount, heroCount, setPlayStatus, playStatus }) 
       </div>
       <div className="hero-explore">
         <p>Explore the features</p>
+        <a href="/catalogue">
         <img
           width="64"
           height="64"
@@ -20,6 +21,7 @@ const Hero = ({ heroData, setHeroCount, heroCount, setPlayStatus, playStatus }) 
           alt="Explore features"
           className="fade-in"
         />
+        </a>
       </div>
       <div className="hero-dot-play">
         <ul className="hero-dots">
