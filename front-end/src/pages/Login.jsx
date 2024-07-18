@@ -70,7 +70,7 @@ export default function Login() {
       <div className="container">
         <div className="form-container sign-in">
           <Form onSubmit={form.handleSubmit(onSubmit)}>
-            <h1>Login In</h1>
+            <h1>Log-In</h1>
             <Controller
               control={form.control}
               name="email"
@@ -105,7 +105,7 @@ export default function Login() {
               Forgot Your Password?
             </Link>
             <button type="submit" disabled={isLoading}>
-              {isLoading ? "Logging in..." : "Login"}
+              {isLoading ? "Logging in..." : "Log-in"}
             </button>
           </Form>
         </div>

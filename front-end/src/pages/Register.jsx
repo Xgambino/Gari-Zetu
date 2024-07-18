@@ -206,7 +206,7 @@ export default function Login() {
               type="submit"
               disabled={form.formState.isSubmitting}
             >
-              {form.formState.isSubmitting ? "Submitting..." : "Submit"}
+              {form.formState.isSubmitting ? "Registering..." : "Register"}
             </Button>
           </Form>
         </div>
