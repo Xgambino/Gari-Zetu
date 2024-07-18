@@ -26,9 +26,9 @@ function Catalogue() {
       <CatalogueVideo />
       <div className="catalogue-container">
         <h1 className="catalogue-title">Catalogue</h1>
-        <button className="catalogue-futuristic-button">
+        {/* <button className="catalogue-futuristic-button">
           <a href="/add-to-catalogue">Add to Catalogue</a>
-        </button>
+        </button> */}
         <ul className="catalogue-list">
           {catalogue.map((item) => (
             <li key={item.id} className="catalogue-item">
