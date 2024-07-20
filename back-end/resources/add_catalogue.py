@@ -27,7 +27,7 @@ class CatalogueAddResource(Resource):
         }
 
     def post(self):
-        args = add_catalogue_parser.parse_args()
+        # args = add_catalogue_parser.parse_args()
         add_catalogue = AddCatalogue(
             image_url=args['image_url'],
             brand=args['brand'],
