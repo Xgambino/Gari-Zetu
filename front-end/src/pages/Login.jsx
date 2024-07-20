@@ -114,7 +114,6 @@ export default function Login() {
     </div>
   );
 }
-
 const RegisterButton = () => {
   const navigate = useNavigate();
 
