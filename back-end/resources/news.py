@@ -1,53 +1,30 @@
-from app import db
-from models import Catalogue, AddCatalogue, News
+from flask_restful import Resource, reqparse
+from flask import request
+from datetime import datetime
+from models import News, db
 
-db.create_all()
+# Create a request parser for adding news articles
+news_parser = reqparse.RequestParser()
+news_parser.add_argument('image_url', type=str, required=True, help='Image URL is required')
+news_parser.add_argument('description', type=str, required=True, help='Content is required')
+news_parser.add_argument('location', type=str, required=True, help='Location is required')
+news_parser.add_argument('ticket_price', type=str, required=True, help='Title is required')
+news_parser.add_argument('date', type=lambda x: datetime.strptime(x, '%Y-%m-%d'), required=True, help='Publication date is required (YYYY-MM-DD)')
 
-# Add seed data for Catalogue
-catalogue1 = Catalogue(
-    image_url="https://example.com/image1.jpg",
-    brand="Toyota",
-    model="Camry",
-    category="Sedan",
-    price="30000",
-    rating="4.5",
-    release_date="2022-01-01"
-)
+class NewsResource(Resource):
+    def get(self):
+        news_articles = News.query.all()
+        return [article.to_dict() for article in news_articles], 200
 
-catalogue2 = Catalogue(
-    image_url="https://example.com/image2.jpg",
-    brand="Honda",
-    model="Civic",
-    category="Sedan",
-    price="25000",
-    rating="4.3",
-    release_date="2022-02-01"
-)
-
-db.session.add(catalogue1)
-db.session.add(catalogue2)
-
-# Add seed data for AddCatalogue
-add_catalogue1 = AddCatalogue(
-    image_url="https://example.com/image3.jpg",
-    brand="Toyota",
-    model="Corolla",
-    category="Sedan",
-    price="20000",
-    rating="4.2",
-    release_date="2022-03-01"
-)
-
-db.session.add(add_catalogue1)
-
-# Add seed data for News
-news1 = News(
-    image_url="https://example.com/image4.jpg",
-    description="New car models arriving this summer!",
-    ticket_price="100",
-    date="2022-04-01"
-)
-
-db.session.add(news1)
-
-db.session.commit()
+    def post(self):
+        data = request.get_json()
+        news_article = News(
+            image_url=data['image_url'],
+            description=data['description'],
+            location=data['location'],
+            ticket_price=data['ticket_price'],
+            date=data['date']
+        )
+        db.session.add(news_article)
+        db.session.commit()
+        return news_article.to_dict(), 201
