@@ -1,21 +1,23 @@
+import pytest
 import json
+from app import app, db
 from models import News
 
-def test_get_news(test_client):
+@pytest.fixture(scope='module')
+def test_client():
+    app.config['TESTING'] = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    with app.test_client() as client:
+        with app.app_context():
+            db.create_all()
+        yield client
+        with app.app_context():
+            db.drop_all()
+
+def test_get_news_empty(test_client):
+    """Test GET /news when there are no news articles"""
     response = test_client.get('/news')
     assert response.status_code == 200
-    assert isinstance(json.loads(response.data), list)
-
-# tests/test_news.py
-# def test_post_news(client):
-#     response = client.post('/news', json={
-#         'image_url': 'https://example.com/news.jpg',
-#         'description': 'New Event',
-#         'location': 'Nairobi',
-#         'ticket_price': 'KES 3,000',
-#         'date': '2024-08-15'  
-#     })
-#     assert response.status_code == 201
-#     data = response.json
-#     assert 'id' in data
-#     assert data['description'] == 'New Event'
+    assert json.loads(response.data) == []
