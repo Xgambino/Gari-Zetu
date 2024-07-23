@@ -151,14 +151,14 @@ news_entries = [
         date=str_to_date('2024-10-10')
     ),
     News(
-        image_url='https://png.pngtree.com/png-clipart/20210424/original/pngtree-car-rental-promotion-poster-car-rental-discount-png-image_6265018.jpg',
+        image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQljWlj96aCdZY_7gjsibK6WBXNiXuuDLXIkh_VYXCPnmahZUU0aJN-TsaW9Oi_1RMky7E&usqp=CAU',
         description='Special Discounts on Car Rentals',
         location='Thika, Kenya',
         ticket_price='KES 3,500', 
         date=str_to_date('2024-11-05')
     ),
     News(
-        image_url='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/rent-a-car-flyer-design-template-50da4c3d441d2a6c5d3d634a6d281a13_screen.jpg?ts=1561532452',
+        image_url='https://img.freepik.com/premium-psd/car-rental-promotion-social-media-instagram-post-banner-template_349461-64.jpg',
         description='Rent-A-Car: Best Practices and Tips',
         location='Nakuru, Kenya',
         ticket_price='KES 2,000', 
